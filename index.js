@@ -15,10 +15,7 @@ dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 8088;
-const corsOptions = {
-  origin: true,
-  credential: true,
-};
+
 //database connection
 const connect = async () => {
   try {
@@ -36,7 +33,7 @@ const connect = async () => {
 
 //middleware
 app.use(express.json());
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(cookieParser());
 
 //
